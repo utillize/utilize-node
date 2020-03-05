@@ -5,7 +5,14 @@
         "target":"ES6",
         "moduleResolution": "node",
         "sourceMap": true,
-        "outDir": "build"
+        "outDir": "build",
+        "baseUrl": "."
     },
-    "lib": ["es2015"]
+    "lib": ["es2015"],
+    "include": [
+        "src/**/*.ts"
+    ],
+    "exclude": [
+        "node_modules"
+    ]
 }
