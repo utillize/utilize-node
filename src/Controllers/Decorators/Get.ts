@@ -1,4 +1,4 @@
-import { RouteDefinition } from '../RouteDefinition';
+import { RouteDefinition } from '../../Model/RouteDefinition';
 
 export const Get = (path: string): MethodDecorator => {
     // target is the class and propertyKey is the decorated method name

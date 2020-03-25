@@ -6,7 +6,8 @@
         "moduleResolution": "node",
         "sourceMap": true,
         "outDir": "build",
-        "baseUrl": "."
+        "baseUrl": ".",
+        "experimentalDecorators": true
     },
     "lib": ["es2015"],
     "include": [
