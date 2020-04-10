@@ -1,12 +1,10 @@
-import 'reflect-metadata'
-import express, {Request, Response} from 'express';
+import http from 'http';
+import express from 'express';
 
-const app = express();
+const router = express();
+const {PORT = 3000 } = process.env;
+const server = http.createServer(router);
 
-app.get('/',(req: Request, res: Response) => {
-    res.send('hello world')
-})
-
-app.listen(8000, ()=> {
-    console.log('started Utilize on 8000')
+server.listen(PORT, () => {
+    console.log(`server is running on port ${PORT}`)
 })
