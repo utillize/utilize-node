@@ -3,5 +3,5 @@ import { Router } from "express";
 
 
 export const handleCompression = (router: Router) => {
-    router.use(compression());
-  };
+  router.use(compression());
+};
