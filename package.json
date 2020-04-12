@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "tsc-watch --onSuccess \"node ./build/server.js\""
+    "dev": "tsc-watch --onSuccess \"node ./build/server.js\"",
+    "test": "jest --coverage --verbose"
   },
   "repository": {
     "type": "git",
@@ -35,5 +36,20 @@
     "reflect-metadata": "^0.1.13",
     "ts-node": "^8.7.0",
     "tsc-watch": "^4.2.3"
+  },
+  "jest": {
+    "verbose": true,
+    "transform": {
+      "^.+\\.tsx?$": "ts-jest"
+    },
+    "testRegex": "(/__tests__/.*|(\\.|/)(test|spec))\\.(jsx?|tsx?)$",
+    "moduleFileExtensions": [
+      "ts",
+      "tsx",
+      "js",
+      "jsx",
+      "json",
+      "node"
+    ]
   }
 }
