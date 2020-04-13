@@ -8,6 +8,16 @@ services:
     ports:
       - "8000:8000"
   
+  db:
+    image: mongo:latest
+    restart: always
+    volumes: 
+      - ./utilizeData:\mongodb\data
+    environment:
+      - MONGO_INITDB_DATABASE= utilize
+    ports:
+      - 27017:27017
+
   web-cli:
     image: utilize
     networks:
