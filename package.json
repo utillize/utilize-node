@@ -7,7 +7,7 @@
     "dev": "export NODE_ENV=developement && ts-node ./src/server.ts",
     "pre-build": "tslint -c tslint.json -p tsconfig.json --fix",
     "build": "tsc",
-    "server-start": "export NODE_ENV=production &&npm run pre-build && npm run build && node ./build/servert.js",
+    "server-start": "export NODE_ENV=production &&npm run pre-build && npm run build && node ./build/server.js",
     "dev-build": "export NODE_ENV=developement && tsc-watch --onSuccess \"node ./build/server.js\"",
     "test": "jest --coverage --verbose"
   },

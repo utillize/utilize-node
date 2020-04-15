@@ -1,6 +1,6 @@
 import { Request, Response, NextFunction, Router } from 'express';
-import { HTTPClientError, HTTP404Error } from "../utils/httpErrors";
-
+import { HTTPClientError } from "../utils/http-errors/httpClientErrors";
+import { HTTP404Error } from "../utils/http-errors/HTTP404Error"
 const handle404Errors = (router: Router) => {
 	router.use((req: Request, res: Response) => {
 		throw new HTTP404Error("method not found");
