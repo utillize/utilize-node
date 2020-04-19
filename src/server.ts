@@ -1,6 +1,6 @@
+import 'reflect-metadata';
 import http from 'http';
 import express from 'express';
-import mongoose from 'mongoose';
 import dotenv from 'dotenv';
 import { applyMiddleware, applyRoutes } from './utils';
 import middleware from './middleware';
@@ -15,7 +15,6 @@ if (process.env.NODE_ENV === 'development') {
   dotenv.config({ path: '/home/resparx/Documents/Utilize/.env' });
 }
 
-console.log(process.env.NODE_ENV, "env")
 // process.on("uncaughtException", e => {
 //   console.log(e);
 //   process.exit(1);
@@ -27,15 +26,8 @@ console.log(process.env.NODE_ENV, "env")
 
 const router = express();
 
-const {
-  MONGO_USER,
-  MONGO_PASSWORD,
-  MONGO_PATH,
-} = process.env;
-mongoose.connect(`mongodb://${MONGO_USER}:${MONGO_PASSWORD}${MONGO_PATH}`)
-
-applyMiddleware(middleware, router);
 applyRoutes(routes, router);
+applyMiddleware(middleware, router);
 applyMiddleware(errorHandlers, router);
 
 const { PORT = 8000 } = process.env;
